@@ -5,6 +5,8 @@ let characters;
 let planets;
 let filmTitle = document.querySelector(".film-title");
 let director = document.querySelector(".director");
+let releaseDate = document.querySelector(".release-date");
+let crawl = document.querySelector(".crawl");
 const planetDiv = document.querySelector(".planets");
 const characterDiv = document.querySelector(".characters");
 
@@ -29,8 +31,11 @@ async function getFilm() {
 }
 
 function renderFilm() {
-  filmTitle.textContent = film.title;
+  const numeral = getFilmNumeral(film.episode_id);
+  filmTitle.textContent = `Episode ${numeral}: ${film.title}`;
   director.textContent = `Directed by ${film.director}`;
+  releaseDate.textContent = `Released ${film.release_date}`;
+  crawl.textContent = film.opening_crawl;
 }
 
 function renderCharacters() {
@@ -53,6 +58,40 @@ function renderPlanets() {
     planetEl.setAttribute("class", "planet");
     planetDiv.appendChild(planetEl);
   }
+}
+function getFilmNumeral(num) {
+  let numeral;
+  switch (num) {
+    case 1:
+      numeral = "I";
+      break;
+    case 2:
+      numeral = "II";
+      break;
+    case 3:
+      numeral = "III";
+      break;
+    case 4:
+      numeral = "IV";
+      break;
+    case 5:
+      numeral = "V";
+      break;
+    case 6:
+      numeral = "VI";
+      break;
+    case 7:
+      numeral = "VII";
+      break;
+    case 8:
+      numeral = "VIII";
+      break;
+    case 9:
+      numeral = "IX";
+      break;
+  }
+
+  return numeral;
 }
 
 getFilm();
