@@ -23,7 +23,8 @@ div a {
 }
 
 .character,
-.planet {
+.planet,
+.film {
   padding: 10px;
   margin: 10px;
   border: 1px solid var(--dark2);
@@ -31,4 +32,23 @@ div a {
   color: var(--dark2);
   background-color: var(--light2);
   font-weight: bold;
+}
+
+#generalInfo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 20px;
+}
+
+#generalInfo p {
+  padding: 20px;
+  margin: 10px;
+  color: var(--dark2);
+  background-color: var(--light2);
+}
+
+#generalInfo span {
+  font-weight: bold;
+  font-size: 1.1em;
 }
