@@ -8,7 +8,6 @@ let climate  = document.querySelector('#climate');
 let diameter= document.querySelector('#diameter');
 let gravity = document.querySelector('#gravity');
 let orbital_period = document.querySelector('#orbital_period');
-let surface_water = document.querySelector('#surface_water');
 let population =document.querySelector('#population');
 
 async function getPlanet() {
@@ -27,9 +26,11 @@ async function getPlanet() {
 }
 
 const renderPlanet = (planet) => {
-  document.title = `SWAPI - ${planet?.name}`;
+  planetName.textContent = planet.name;
   climate.textContent = planet.climate;
   gravity.textContent = planet.gravity;
   population.textContent = planet.population;
+  diameter.textContent = planet.diameter;
+  orbital_period.textContent = planet.orbital_period;
 }
 getPlanet();
